@@ -8,11 +8,27 @@ import { signInWithEmailAndPassword,onAuthStateChanged,signOut } from 'firebase/
 
 const Login=()=>{
     const [email,setEmail] = useState('');
+    const [resetSuccess, setResetSuccess] = useState(null);
     const [user, setUser] = useState(null);
+    const [resetEmail, setResetEmail] = useState('');
     const navigate = useNavigate();
 
     const [error, setError] = useState(null);
     const [password,setPassword] = useState('');
+    const resetPassword = () => {
+        auth
+          .sendPasswordResetEmail(resetEmail)
+          .then(() => {
+            setResetSuccess('Password reset email sent. Check your inbox.');
+            setResetError(null);
+          })
+          .catch((error) => {
+            setResetSuccess(null);
+            setResetError(error.message);
+          });
+      };
+    
+
     const signIn=(e)=>{
         e.preventDefault();
         signInWithEmailAndPassword(auth,email,password)
@@ -35,9 +51,9 @@ const Login=()=>{
                   break;
     
         }
-        // setTimeout(() => {
-        //     setError(null);
-        //   }, 5000);
+        setTimeout(() => {
+            setError(null);
+          }, 5000);
     })
 
     }
@@ -97,9 +113,13 @@ const Login=()=>{
                     
 
                 }}>Create Profile</span>
+                <span className='hi3' onClick={() => navigate('/ForgotPassword')}>
+          Forgot Password
+        </span>
                 
             
             </div>
+
             
         </div>
     )
