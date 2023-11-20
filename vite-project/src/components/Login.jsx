@@ -35,9 +35,9 @@ const Login=()=>{
                   break;
     
         }
-        setTimeout(() => {
-            setError(null);
-          }, 5000);
+        // setTimeout(() => {
+        //     setError(null);
+        //   }, 5000);
     })
 
     }

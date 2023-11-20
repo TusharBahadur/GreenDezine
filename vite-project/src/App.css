@@ -166,12 +166,17 @@ mix-blend-mode: normal;
 opacity: 0.4;
 filter: blur(2px);
 }
+.error-message-container{
+  margin-top:1vw;
+}
+
 .error-message{
   position: absolute;
   color: red;
-  top:37.809647979139505vw;
+  top:37.809647979139505rem;
   opacity: 1;
-  left: 18vw;
+  left: 8.9rem;
+  margin-top: 5vw;
   transition: opacity 1s ease-out;
 }
 .error-message.fade-out{
