@@ -2,7 +2,7 @@ import { useState,useEffect } from 'react'
 
 import {auth} from "../firebase"
 
-import Images from '../Images/Images'
+import Images from 'src/assets/Images/Images'
 import { useNavigate } from 'react-router-dom';
 import { signInWithEmailAndPassword,onAuthStateChanged,signOut } from 'firebase/auth';
 

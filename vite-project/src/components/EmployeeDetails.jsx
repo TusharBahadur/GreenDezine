@@ -1,5 +1,5 @@
 
-import Images from '../Images/Images'
+import Images from 'src/assets/Images/Images'
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 
